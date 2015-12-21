@@ -1,0 +1,26 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<p>Email is: <button id = "config" onclick="emailConfig();">{{config}}</button> </p>
+		<input type="hidden" value="Last thing sent at: {{time}}"></input>
+		
+	<script>
+		
+		function emailConfig(){
+			var xmlHttp = new XMLHttpRequest();
+			xmlHttp.onreadystatechange = function() {
+				if(xmlHttp.readyState == 4){
+					var button = document.getElementById("config");
+					var object = JSON.parse(xmlHttp.responseText);
+					button.innerHTML = object.config;
+				}
+			}
+		 	xmlHttp.open("POST",'/config',true);
+   			xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    		xmlHttp.send();
+		}
+		
+	</script>		
+	</body>
+</html>

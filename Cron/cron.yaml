@@ -1,0 +1,9 @@
+cron:
+- description: Testing Cron Job
+  url: /tasks/minute
+  schedule: every 2 mins
+  
+- description: Weekly Sunday Evening Mail
+  url: /tasks/mail
+  schedule: every sunday 18:00
+  timezone: America/New_York

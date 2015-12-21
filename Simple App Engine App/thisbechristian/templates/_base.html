@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>thisbechristian</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+ 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script1.js">
+    </script>
+  </head>
+  <body>
+  
+	  <nav class="navbar navbar-default">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="/">cb</a>
+		</div>
+		<div>
+		  <ul class="nav navbar-nav">
+		  {% if user_email %}
+			<li><a href="{{logout_url}}">Log Out</a></li>
+			<li><a href="edit">Edit Profile</a></li> 
+			{% else %}
+			<li><a href="{{login_url}}">Log In</a></li> 
+			{% endif %}
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+
+    <br><br>
+
+{% block bodycontent %}{% endblock %}
+
+  </body>
+</html>

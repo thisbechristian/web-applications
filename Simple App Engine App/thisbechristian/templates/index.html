@@ -1,0 +1,39 @@
+{% extends "_base.html" %}
+{% block bodycontent %}
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Welcome
+    	{% if user_email %}
+    		{{user_email}}
+    	{% endif %}
+    </h1>
+    <p>You have made it to Christian Boni's Assignment 4 Website!</p> 
+  </div>
+  
+  
+  {% if user_date %}
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>Name: <em> {{ user_name }} </em> </h3>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>About Me: </h3>
+      <p> {{ user_notes }} </p>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-3 col-sm-offset-10">
+      <p>{{ user_date }} UTC</p>
+    </div>
+  </div>
+  {% endif %}
+  
+  
+</div>
+
+{% endblock %}

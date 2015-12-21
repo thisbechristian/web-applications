@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	
+		<script>
+		
+		function sendData(params, url, callBackFunction){
+			xmlHttp = new XMLHttpRequest();
+			xmlHttp.onreadystatechange = function() {
+				if(xmlHttp.readyState == 4) {
+					callBackFunction(xmlHttp, params);	
+				}
+			}
+			
+			var parameters = '';
+			for(var param in params) {
+				parameters += param + '=' + encodeURIComponent(params[param]) + '&';
+			}
+			
+			xmlHttp.open("POST", url, true);
+			xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+			xmlHttp.send(parameters);
+			
+		}
+		
+		function sendWord(){
+			var word = document.getElementById("word").value;
+			var params = {
+				'word' : word
+			};
+			document.getElementById('status').innerHTML = 'checking...';
+			sendData(params, '/check', respondToCheck);
+		}
+		
+		function respondToCheck(xmlHttp, params) {
+			console.log(xmlHttp.responseText);
+			var status = JSON.parse(xmlHttp.responseText);
+			if (status.word){
+				document.getElementById('status').innerHTML = "This is a word";
+			}
+			else{
+				document.getElementById('status').innerHTML = "This is not a word";
+			}
+		}
+
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="jumbotron">
+				<div class="row">
+    				<div class="col-xs-6 col-xs-offset-3">
+					 	<h1>Word Checker</h1>
+				 		<h4>By Christian Boni</h4>
+				 		<input type="text" class="form-control" id='word' name='word' onkeyup="sendWord()"> </input>
+						<p id='status'></p> 
+					</div>
+				</div>
+  			</div>
+		</div>
+	</body>
+</html>

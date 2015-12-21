@@ -1,0 +1,22 @@
+{% extends "_base.html" %}
+{% block bodycontent %}
+
+<div class="container">
+	<div class="jumbotron">
+	<h2>Account Edit</h2>
+		<form action="commit" method="post" role="form">
+			<div class="form-group">
+				<label for="name">Name:</label>
+				<input type="text" name="name" class="form-control" value="{{user_name}}"> </input>
+			</div>
+			<div class="form-group">
+				<label for="notes">About Me:</label>
+				<textarea name="notes" rows="5" style="resize:vertical;" class="form-control" >{{user_notes}}</textarea>
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+		<p> Last modified: {{user_date}} UTC</p>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <!-- We can reference a stylesheet externally, as a <style> tag, or inline in our HTML. -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div id="title">COW CLICKER</div>
+  
+    <!-- div tags just give us separation on the page. -->
+    <!-- we'll style the "cow" div tag using a selector in our CSS file based on ID. -->
+    
+    <table id='cows'>
+      <tr>
+        <td><div class="cow" onclick="handleCowClick(0);"><img id="albert" src="cow1.jpg"> 
+          <br>Albert is normal </div></td>
+        <td><div class="cow" onclick="handleCowClick(1);"><img id="bob" src="cow2.jpg">
+          <br>Bob can swim </div></td>
+      </tr>
+      <tr>
+        <td><div class="cow" onclick="handleCowClick(2);"><img id="chris" src="cow3.jpg">
+          <br>Chris eats too much taco bell </div></td>
+        <td><div class="cow" onclick="handleCowClick(3);"><img id="dave" src="cow4.jpg">
+          <br>Dave is jacked </div></td>
+      </tr>
+    </table>
+
+        <!-- we'll put our scoreboard here -->
+      <div id="scoreboard">
+       <div id="score"></div>
+       <div class="stats" id='a'></div>
+       <div class="stats" id='b'></div>
+       <div class="stats" id='c'></div>
+       <div class="stats" id='d'></div>
+      </div>
+
+  </body>
+</html>

@@ -1,0 +1,106 @@
+body {
+	position: relative; 
+	font-family: Cabin;
+/* 	font-family: Consolas, monaco, monospace; */
+/* 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; */
+}
+
+.section{
+	font-family: 'Lobster';
+	font-size: 50pt;
+}
+
+#home {
+	font-family: 'Lobster';
+}
+
+#home h1{
+	font-size: 70pt;
+}
+
+#home h3{
+	font-size: 30pt;
+}
+
+#home p{
+	font-size: 18pt;
+}
+
+.course { 
+	background:#ffc480; 
+	padding:10px; 
+	text-transform:uppercase; 
+}
+
+.skill { 
+	background:#fff; 
+	padding:10px;
+	text-transform:uppercase; 
+}
+
+.award { 
+	color: #C7BA85;
+	font-size:50px;
+}
+
+.awards { 
+	color:#002E61; 
+	font-size:20px;
+	text-align: center;
+}
+
+.skills{
+	font-size:14pt;
+}
+
+.blur
+{
+	filter: blur(5px);
+	-webkit-filter: blur(4px);
+	-moz-filter: blur(4px);
+	-o-filter: blur(4px);
+	-ms-filter: blur(4px);
+}
+
+.blur:hover
+{
+	filter: blur(1px);
+	-webkit-filter: blur(1px);
+	-moz-filter: blur(1px);
+	-o-filter: blur(1px);
+	-ms-filter: blur(1px);
+}
+
+.affix {
+	top:0;
+	width: 100%;
+	z-index: 9999 !important;
+}
+
+.navbar {
+	margin-bottom: 0px;
+}
+
+#thenav a{
+	font-family: Cabin;
+	color: #0b3149;
+}
+
+img {
+    width: 100%;
+}
+
+/* 
+.affix ~ .container-fluid {
+ position: relative;
+ top: 50px;
+}
+ */
+
+#education	{padding:100px;color: #0b3149; background-color: #f8fce8;}
+#projects	{padding:100px;color: #0b3149; background-color: #dff3e8;}
+#experience {padding:100px;color: #0b3149; background-color: #d0e4e0;}
+#skills		{padding:100px;color: #0b3149; background-color: #b8ccd0;}
+#awards		{padding:100px;color: #0b3149; background-color: #a0b4b8;}
+#contact	{padding:100px;color: #0b3149; background-color: #809093;}
+#home		{padding:50px;color: #0b3149; background-color:#A5B7BB;}
