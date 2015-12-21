@@ -1,2 +1,2 @@
-# web-applications
-CS 1520
+# Programming for Web Applications
+CS 1520 Projects
